@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  backend:
+    build: .
+    ports:
+      - "22:22"
+    volumes:
+      - ./app:/code
+    command: ./ide/idea-IU-213.4928.7/bin/remote-dev-server.sh run ./code/ --ssh-link-host 0.0.0.0:22 --ssh-link-user test --ssh-link-port 22
